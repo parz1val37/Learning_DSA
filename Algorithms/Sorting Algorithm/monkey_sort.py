@@ -1,4 +1,6 @@
 # Randomly shuffling the array until it gets sorted
+# Time Complexity: infinite, as it is totally random
+
 from random import shuffle as shuffle
 
 def is_sorted(arr):
