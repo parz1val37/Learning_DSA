@@ -10,6 +10,7 @@ def binary_search(arr, target):
       left = mid + 1
     else:
       right = mid -1
+  return False
 
 if __name__=='__main__':
   arr = [-3, 0, 1, 5, 7, 13]
