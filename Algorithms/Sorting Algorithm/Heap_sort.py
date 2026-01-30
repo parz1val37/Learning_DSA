@@ -2,7 +2,7 @@
 # to sort array in ascending order we make max heap and vice-versa
 # We take an array --> heapify it -->
 
-def heap_sort(nums: list[int]) -> list[int]:
+def heap_sort(nums: list[int], reversed: bool = False) -> list[int]:
   # making helper function(max_heapify), similar to shift-down function
   def max_heapify(nums: list[int], size_to_consider: int, starting_index: int) -> None:
     while True:
@@ -30,5 +30,13 @@ def heap_sort(nums: list[int]) -> list[int]:
   for i in range(n-1, 0, -1):
     nums[0], nums[i] = nums[i], nums[0]
     max_heapify(nums, i, 0)
+
+  if reversed:
+    l = 0
+    r = len(nums) - 1
+    while l < r:
+      nums[l], nums[r] = nums[r], nums[l]
+      l += 1
+      r -= 1
   
   return nums
