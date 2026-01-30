@@ -40,7 +40,7 @@ class MinHeap:
 
     return min_element
 
-  def heapify(self, elements): # Time: O(n)
+  def _heapify(self, elements): # Time: O(n)
     self.heap = list(elements)
 
     for i in reversed(range(self._parent(len(self.heap)-1)+1)): # type: ignore
@@ -49,7 +49,7 @@ class MinHeap:
   def meld(self, other_heap):
     combined_heap = self.heap + other_heap.heap
 
-    self.heapify(combined_heap)
+    self._heapify(combined_heap)
 
   def _parent(self, index: int):
     return (index - 1)//2 if index != 0 else None
